@@ -36,9 +36,6 @@ def cadastro(request):
         form = CadastroForms(request.POST)
 
         if form.is_valid():
-            if form.cleaned_data["senha_1"] != form.cleaned_data["senha_2"]:
-                messages.error(request, 'Senhas não são iguais')   #Verificar senha
-                return redirect('cadastro')
             
             nome=form['nome_cadastro'].value()
             email=form['email'].value()  
